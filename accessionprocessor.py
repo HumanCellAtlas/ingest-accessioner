@@ -22,8 +22,6 @@ class AccessionProcessor:
 
             entity_link = params['callbackLink']
 
-            time.sleep(1)
-
             if self.ingest_api.update_entity_if_match(entity_link, json.dumps(metadata_update)):
                 self.logger.info('updated entity accession uuid!')
             else:
