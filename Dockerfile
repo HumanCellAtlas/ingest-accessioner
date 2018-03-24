@@ -2,7 +2,7 @@ FROM jfloff/alpine-python:2.7-slim
 MAINTAINER Alegria Aclan "aaclan@ebi.ac.uk"
 
 RUN mkdir /app
-COPY config.py messagereceiver.py accessionprocessor.py ingestapi.py accession-app.py requirements.txt /app/
+COPY config.py listener.py accessionprocessor.py ingestapi.py accession-app.py requirements.txt /app/
 
 WORKDIR /app
 
