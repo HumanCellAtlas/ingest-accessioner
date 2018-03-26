@@ -1,4 +1,10 @@
-import logging, uuid, json, time
+import json
+import logging
+import sys
+import uuid
+
+log_format = ' %(asctime)s  - %(name)s - %(levelname)s in %(filename)s:%(lineno)s %(funcName)s(): %(message)s'
+logging.basicConfig(stream=sys.stdout, level=logging.INFO, format=log_format)
 
 
 class AccessionProcessor:
@@ -16,8 +22,7 @@ class AccessionProcessor:
             debug_message = 'New Accession Number {new_uuid}'.format(new_uuid=new_uuid)
             self.logger.info(debug_message)
 
-            metadata_update = {}
-            metadata_update['uuid'] = {}
+            metadata_update = {'uuid': {}}
             metadata_update['uuid']['uuid'] = new_uuid
 
             entity_link = params['callbackLink']

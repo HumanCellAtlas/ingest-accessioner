@@ -1,4 +1,9 @@
-import json, urllib, requests, logging, urlparse, time
+import json
+import logging
+import requests
+import time
+import urllib
+import urlparse
 
 ENTITY_TYPE_LINKS = {
     "sample": "samples",
@@ -11,6 +16,10 @@ ENTITY_TYPE_LINKS = {
 
 SEARCH_UUID_PATH = '/search/findByUuid?uuid='
 MAX_PATCH_RETRIES = 3
+
+LOG_FORMAT = ('%(levelname) -10s %(asctime)s %(name) -30s %(funcName) '
+              '-35s %(lineno) -5d: %(message)s')
+logging.basicConfig(level=logging.INFO)
 
 
 class IngestApi:
